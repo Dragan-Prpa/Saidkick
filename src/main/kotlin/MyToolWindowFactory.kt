@@ -29,7 +29,7 @@ class MyToolWindowFactory : ToolWindowFactory {
         toolWindow.contentManager.addContent(content)
     }
 
-    class MyToolWindow(project: Project) {
+    class MyToolWindow(private val project: Project) {
         private val config = AssistantConfig.fromEnv(project)
         private val assistant = SaidkickAssistant(config)
         private val conversationArea = JBTextArea()
@@ -58,6 +58,7 @@ class MyToolWindowFactory : ToolWindowFactory {
 
         fun start(parentDisposable: Disposable) {
             val activityMonitor = ActivityMonitor(
+                project = project,
                 config = config,
                 onIdle = { pushAssistantMessage(assistant.respondToInternalPrompt(it)) },
                 onChangeBurst = { pushAssistantMessage(assistant.respondToInternalPrompt(it)) },
