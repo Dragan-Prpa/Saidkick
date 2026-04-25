@@ -16,15 +16,11 @@ data class AssistantConfig(
     val llmModel: String,
     val llmTimeoutSeconds: Int,
     val idleThresholdSeconds: Int,
-    val changeBurstThreshold: Int,
-    val changeBurstWindowSeconds: Int,
 ) {
     companion object {
         fun fromEnv(project: Project): AssistantConfig {
             val projectEnv = DotEnvLoader.loadProjectEnv(project)
-            val projectFileEnv = DotEnvLoader.loadProjectEnvFileOnly(project)
-            val pluginEnv = DotEnvLoader.loadPluginEnv()
-            val llmEnv = projectEnv + pluginEnv
+            val llmEnv = DotEnvLoader.loadPluginEnv()
 
             val assistantName = projectEnv["ASSISTANT_NAME"]
                 .orEmpty()
@@ -33,9 +29,9 @@ data class AssistantConfig(
                 .orEmpty()
                 .ifBlank { "Developer" }
             val assistantPersonality = PersonalityPreset.fromValue(projectEnv["ASSISTANT_PERSONALITY"])
-            val requiresIdentitySetup = isMissing(projectFileEnv, "ASSISTANT_NAME") ||
-                isMissing(projectFileEnv, "DEVELOPER_NAME") ||
-                isMissing(projectFileEnv, "ASSISTANT_PERSONALITY")
+            val requiresIdentitySetup = isMissing(projectEnv, "ASSISTANT_NAME") ||
+                isMissing(projectEnv, "DEVELOPER_NAME") ||
+                isMissing(projectEnv, "ASSISTANT_PERSONALITY")
 
             val llmBaseUrl = llmEnv["LLM_BASE_URL"]
                 .orEmpty()
@@ -51,8 +47,6 @@ data class AssistantConfig(
             val idleThresholdSeconds = projectEnv["INACTIVITY_PERIOD"]?.toIntOrNull()
                 ?: projectEnv["IDLE_THRESHOLD_SECONDS"]?.toIntOrNull()
                 ?: 300
-            val changeBurstThreshold = projectEnv["CHANGE_BURST_THRESHOLD"]?.toIntOrNull() ?: 20
-            val changeBurstWindowSeconds = projectEnv["CHANGE_BURST_WINDOW_SECONDS"]?.toIntOrNull() ?: 60
 
             return AssistantConfig(
                 assistantName = assistantName,
@@ -64,8 +58,6 @@ data class AssistantConfig(
                 llmModel = llmModel,
                 llmTimeoutSeconds = llmTimeoutSeconds,
                 idleThresholdSeconds = idleThresholdSeconds,
-                changeBurstThreshold = changeBurstThreshold,
-                changeBurstWindowSeconds = changeBurstWindowSeconds,
             )
         }
 
@@ -82,7 +74,7 @@ private object DotEnvLoader {
             ?.takeIf { it.isNotEmpty() }
             ?.let { Path.of(it) }
         if (explicitEnvPath != null && explicitEnvPath.exists()) {
-            return loadFromPath(explicitEnvPath)
+            return parseFileOnly(explicitEnvPath)
         }
 
         val candidateRoots = linkedSetOf<Path>()
@@ -104,26 +96,12 @@ private object DotEnvLoader {
             .map { it.resolve(".env") }
             .firstOrNull { it.exists() && isLikelyPluginRoot(it.parent) }
 
-        return if (preferredEnvPath != null) loadFromPath(preferredEnvPath) else System.getenv()
+        return if (preferredEnvPath != null) parseFileOnly(preferredEnvPath) else emptyMap()
     }
 
     fun loadProjectEnv(project: Project): Map<String, String> {
-        val basePath = project.basePath ?: return System.getenv()
-        return loadFromPath(Path.of(basePath, ".env"))
-    }
-
-    fun loadProjectEnvFileOnly(project: Project): Map<String, String> {
         val basePath = project.basePath ?: return emptyMap()
         return parseFileOnly(Path.of(basePath, ".env"))
-    }
-
-    private fun loadFromPath(envPath: Path): Map<String, String> {
-        val systemEnv = System.getenv()
-        if (!envPath.exists()) return systemEnv
-
-        val fileValues = parseFileOnly(envPath)
-
-        return systemEnv + fileValues
     }
 
     private fun parseFileOnly(envPath: Path): Map<String, String> {

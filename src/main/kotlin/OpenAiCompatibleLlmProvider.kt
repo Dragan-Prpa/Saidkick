@@ -11,6 +11,8 @@ class OpenAiCompatibleLlmProvider(
     private val config: AssistantConfig,
 ) : LlmProvider {
 
+    private val httpClient: HttpClient by lazy { HttpClient.newHttpClient() }
+
     override fun complete(request: LlmRequest): LlmResponse {
         val apiKey = config.llmApiKey
             ?: return LlmResponse.Error("LLM is not configured. Set LLM_API_KEY in .env.")
@@ -27,7 +29,7 @@ class OpenAiCompatibleLlmProvider(
             .build()
 
         return runCatching {
-            HttpClient.newHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString())
+            httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString())
         }.fold(
             onSuccess = { response ->
                 when {

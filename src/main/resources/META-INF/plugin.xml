@@ -8,13 +8,13 @@
     <name>Saidkick</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor>Saidkick</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
     <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
+        Saidkick is a personified coding-buddy tool window for IntelliJ that chats with an OpenAI-compatible LLM,
+        greets the developer, and proactively pings them when idle or after many saved changes since the last commit.
         ]]></description>
 
     <!-- Product and plugin compatibility requirements.
@@ -26,6 +26,10 @@
     <!-- Extensions defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup
+                id="Saidkick Notifications"
+                displayType="BALLOON"
+                isLogByDefault="true"/>
         <toolWindow id="MyToolWindow" factoryClass="com.example.MyToolWindowFactory"
                     icon="AllIcons.Toolwindows.ToolWindowPalette"/>
         <checkinHandlerFactory implementation="com.example.SaidkickCheckinHandlerFactory"/>

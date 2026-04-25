@@ -1,10 +1,8 @@
 package com.example
 
-import com.intellij.ide.plugins.PluginManagerCore
 import com.intellij.openapi.Disposable
-import com.intellij.openapi.extensions.PluginId
-import com.intellij.openapi.util.Disposer
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.util.Disposer
 import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBPanel
@@ -13,7 +11,6 @@ import com.intellij.ui.components.JBTextArea
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.content.ContentFactory
 import java.awt.BorderLayout
-import java.nio.file.Path
 import javax.swing.JButton
 import javax.swing.JPanel
 
@@ -60,18 +57,27 @@ class MyToolWindowFactory : ToolWindowFactory {
             val activityMonitor = ActivityMonitor(
                 project = project,
                 config = config,
-                onIdle = { pushAssistantMessage(assistant.respondToInternalPrompt(it)) },
-                onChangeBurst = { pushAssistantMessage(assistant.respondToInternalPrompt(it)) },
+                onIdle = { postProactiveReply(it) },
+                onChangeBurst = { postProactiveReply(it) },
             )
             activityMonitor.start(parentDisposable)
 
-            appendLine("Saidkick runtime: ${runtimeSignature()}")
             if (config.requiresIdentitySetup) {
                 pushAssistantMessage(identitySetupMessage())
             } else {
-                pushAssistantMessage("Hello ${config.developerName}, I am ${config.assistantName}.")
+                pushAssistantMessage("Hello ${config.developerName}, ${config.assistantName} here. Ready to do some coding?")
             }
         }
+
+        private fun postProactiveReply(internalPrompt: String) {
+            val reply = assistant.respondToInternalPrompt(internalPrompt)
+            if (reply.isNotBlank()) {
+                pushAssistantMessage(reply)
+                SaidkickNotifications.info(project, config.assistantName, reply)
+            }
+        }
+
+
 
         private fun sendInput() {
             val text = inputField.text.trim()
@@ -91,6 +97,7 @@ class MyToolWindowFactory : ToolWindowFactory {
         private fun pushAssistantMessage(message: String) {
             appendLine("${config.assistantName}: $message")
         }
+
 
         private fun identitySetupMessage(): String {
             return """
@@ -113,18 +120,6 @@ class MyToolWindowFactory : ToolWindowFactory {
                 conversationArea.append("\n")
             }
             conversationArea.append(line)
-        }
-
-        private fun runtimeSignature(): String {
-            val descriptor = PluginManagerCore.getPlugin(PluginId.getId("com.example.Saidkick"))
-            val pluginVersion = descriptor?.version
-                ?: MyToolWindowFactory::class.java.`package`?.implementationVersion
-                ?: "dev"
-            val location = runCatching {
-                descriptor?.pluginPath?.fileName?.toString()
-                    ?: MyToolWindowFactory::class.java.protectionDomain.codeSource.location.toString()
-            }.getOrElse { "unknown-artifact" }
-            return "version=$pluginVersion artifact=$location"
         }
 
         fun getContent(): JBPanel<JBPanel<*>> = content

@@ -6,13 +6,6 @@ enum class PersonalityPreset(private val key: String) {
     CHEERLEADER("cheerleader"),
     REVIEWER("reviewer");
 
-    fun stylePrefix(): String = when (this) {
-        COACH -> "[Coach]"
-        ARCHITECT -> "[Architect]"
-        CHEERLEADER -> "[Cheerleader]"
-        REVIEWER -> "[Reviewer]"
-    }
-
     companion object {
         fun fromValue(value: String?): PersonalityPreset {
             val normalized = value?.trim()?.lowercase().orEmpty()

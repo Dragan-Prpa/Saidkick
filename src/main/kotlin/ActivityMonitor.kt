@@ -1,8 +1,7 @@
 package com.example
 
-import com.intellij.openapi.components.service
 import com.intellij.openapi.Disposable
-import com.intellij.AppTopics
+import com.intellij.openapi.components.service
 import com.intellij.openapi.fileEditor.FileDocumentManagerListener
 import com.intellij.openapi.project.Project
 import java.awt.AWTEvent
@@ -20,7 +19,10 @@ class ActivityMonitor(
     @Volatile
     private var lastActivityTimestamp: Long = System.currentTimeMillis()
 
+    @Volatile
     private var idleNotified = false
+
+    @Volatile
     private var burstNotified = false
 
     fun start(parentDisposable: Disposable) {
@@ -36,6 +38,7 @@ class ActivityMonitor(
         )
 
         val counterService = project.service<SavedChangeCounterService>()
+        val burstThreshold = COMMIT_REMINDER_THRESHOLD
 
         val saveListener = object : FileDocumentManagerListener {
             override fun beforeDocumentSaving(document: com.intellij.openapi.editor.Document) {
@@ -44,17 +47,18 @@ class ActivityMonitor(
                 idleNotified = false
 
                 val savedChangeCount = counterService.incrementAndGet()
-                if (!burstNotified && savedChangeCount > 100) { //PRPA_COMMENT:change counter here
+                if (!burstNotified && savedChangeCount > burstThreshold) {
                     burstNotified = true
                     onChangeBurst("Developer has been coding for some time; remind them to commit.")
                 }
             }
         }
-        project.messageBus.connect(parentDisposable).subscribe(AppTopics.FILE_DOCUMENT_SYNC, saveListener)
+        project.messageBus.connect(parentDisposable)
+            .subscribe(FileDocumentManagerListener.TOPIC, saveListener)
 
         val timer = javax.swing.Timer(5_000) {
             val now = System.currentTimeMillis()
-            if (counterService.get() <= 100) {    //PRPA_COMMENT:change counter var here
+            if (counterService.get() <= burstThreshold) {
                 burstNotified = false
             }
 
@@ -72,6 +76,8 @@ class ActivityMonitor(
         }
     }
 }
+
+private const val COMMIT_REMINDER_THRESHOLD = 150
 
 private fun Disposable.whenDisposed(action: () -> Unit) {
     com.intellij.openapi.util.Disposer.register(this) { action() }
