@@ -57,8 +57,19 @@ class MyToolWindowFactory : ToolWindowFactory {
         }
 
         fun start(parentDisposable: Disposable) {
-            // Chat-only mode: no proactive monitor attached.
+            val activityMonitor = ActivityMonitor(
+                config = config,
+                onIdle = { pushAssistantMessage(assistant.respondToInternalPrompt(it)) },
+                onChangeBurst = { pushAssistantMessage(assistant.respondToInternalPrompt(it)) },
+            )
+            activityMonitor.start(parentDisposable)
+
             appendLine("Saidkick runtime: ${runtimeSignature()}")
+            if (config.requiresIdentitySetup) {
+                pushAssistantMessage(identitySetupMessage())
+            } else {
+                pushAssistantMessage("Hello ${config.developerName}, I am ${config.assistantName}.")
+            }
         }
 
         private fun sendInput() {
@@ -77,7 +88,23 @@ class MyToolWindowFactory : ToolWindowFactory {
         }
 
         private fun pushAssistantMessage(message: String) {
-            appendLine("Saidkick: $message")
+            appendLine("${config.assistantName}: $message")
+        }
+
+        private fun identitySetupMessage(): String {
+            return """
+                Hello Developer, I am Saidkick. I noticed your project .env is missing identity settings.
+                Please create or update <project>/.env with:
+
+                ASSISTANT_NAME=Saidkick (or your preferred assistant name)
+
+                DEVELOPER_NAME=YourName
+
+                ASSISTANT_PERSONALITY=coach (allowed: coach, architect, cheerleader, reviewer)
+
+                Call these variables exactly as written.
+                After saving, fully exit and re-enter the IDE so I can read the new env values.
+            """.trimIndent()
         }
 
         private fun appendLine(line: String) {
