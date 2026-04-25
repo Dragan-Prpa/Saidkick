@@ -14,6 +14,20 @@
 #enviornment files
 .env
 
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ Platform Gradle plugin
+.intellijPlatform/
+
+# IntelliJ project files
+.idea/
+*.iml
+
+# OS / editor
+.DS_Store
 
 # Package Files #
 *.jar
