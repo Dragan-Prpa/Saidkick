@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.JavaExec
+
 plugins {
     id("java")
     alias(libs.plugins.kotlin)
@@ -43,6 +45,14 @@ intellijPlatform {
 }
 
 tasks {
+    named("instrumentCode") {
+        enabled = false
+    }
+
+    named<JavaExec>("runIde") {
+        jvmArgs("-Dsaidkick.plugin.env=${projectDir.resolve(".env")}")
+    }
+
     wrapper {
         gradleVersion = providers.gradleProperty("gradleVersion").get()
     }
