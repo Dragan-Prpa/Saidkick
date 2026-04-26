@@ -16,6 +16,7 @@ Saidkick uses two env files:
 
 - Plugin runtime API config from this plugin project's root `.env`
 - Optional identity/tone values from the opened user's project `.env`
+- Optional MCP server definitions from the plugin `.env` or persisted settings
 
 ### Plugin project `.env` (required for LLM calls)
 
@@ -24,6 +25,17 @@ LLM_BASE_URL=https://api.openai.com/v1
 LLM_API_KEY=
 LLM_MODEL=gpt-4o-mini
 LLM_TIMEOUT_SECONDS=20
+
+MCP_ENABLED=false
+
+# Optional remote MCP server entry
+# MCP_SERVER_1_NAME=LocalDocs
+# MCP_SERVER_1_BASE_URL=http://localhost:3000
+# MCP_SERVER_1_API_KEY=
+# MCP_SERVER_1_ENABLED=true
+# MCP_SERVER_1_TIMEOUT_SECONDS=20
+# MCP_SERVER_1_MESSAGE_PATH=/mcp
+# MCP_SERVER_1_SSE_PATH=/sse
 ```
 
 ### Opened user's project `.env` (identity values)
@@ -45,3 +57,5 @@ Proactive LLM responses are constrained to exactly one sentence and at most 20 w
 On startup, if any of `ASSISTANT_NAME`, `DEVELOPER_NAME`, or `ASSISTANT_PERSONALITY` are missing from the opened project `.env`, Saidkick sends an unprompted setup message that starts with `Hello Developer, I am Saidkick` and explains exactly how to define them. After updating `.env`, fully restart the IDE so the plugin reloads the new values.
 
 Personality descriptions used in prompt injection are documented in `docs/personality-spec.md`.
+
+MCP server settings are parsed from the plugin `.env` using numbered prefixes like `MCP_SERVER_1_*`. If the plugin later persists MCP settings in the IDE, persisted values take precedence over `.env` values.
