@@ -33,6 +33,8 @@ class ProjectReadOnlyContextProvider(
         val queryTerms = extractQueryTerms(normalizedQuery)
         val files = discoverProjectFiles()
         val wantsFileListing = asksForFileListing(normalizedQuery)
+        val fileSearchQuery = extractFileSearchQuery(normalizedQuery)
+        val textSearchQuery = extractTextSearchQuery(userInput)
 
         val ranked = files
             .map { entry -> entry to scoreFile(entry, queryTerms) }
@@ -48,6 +50,14 @@ class ProjectReadOnlyContextProvider(
 
         if (wantsFileListing || relevant.isEmpty()) {
             appendWithinBudget(context, buildFileListSection(files))
+        }
+
+        if (!fileSearchQuery.isNullOrBlank()) {
+            appendWithinBudget(context, buildFileSearchSection(files, fileSearchQuery))
+        }
+
+        if (!textSearchQuery.isNullOrBlank()) {
+            appendWithinBudget(context, buildTextSearchSection(files, textSearchQuery))
         }
 
         if (relevant.isNotEmpty()) {
@@ -132,6 +142,25 @@ class ProjectReadOnlyContextProvider(
 
     private fun asksForFileListing(userInput: String): Boolean {
         return listOf("list files", "show files", "project files", "file tree", "folders", "structure").any { it in userInput }
+    }
+
+    private fun extractFileSearchQuery(userInput: String): String? {
+        val markers = listOf("search files for", "find file", "search file", "filename contains")
+        val marker = markers.firstOrNull { it in userInput } ?: return null
+        val raw = userInput.substringAfter(marker, "").trim().trim('"', '\'', '`')
+        return raw.takeIf { it.length >= 2 }
+    }
+
+    private fun extractTextSearchQuery(userInput: String): String? {
+        val normalized = userInput.lowercase(Locale.getDefault())
+        val markers = listOf("search text", "find text", "contains text", "grep")
+        val marker = markers.firstOrNull { it in normalized } ?: return null
+
+        val markerStart = normalized.indexOf(marker)
+        if (markerStart < 0) return null
+        val markerEnd = markerStart + marker.length
+        val raw = userInput.substring(markerEnd).trim().trim('"', '\'', '`')
+        return raw.takeIf { it.length >= 2 }
     }
 
     private fun extractQueryTerms(userInput: String): Set<String> {
@@ -249,6 +278,60 @@ class ProjectReadOnlyContextProvider(
     private fun buildFileListSection(files: List<ProjectFileEntry>): String {
         val listed = files.joinToString("\n") { "- ${it.relativePath}" }
         return "Project files (read-only listing):\n$listed"
+    }
+
+    private fun buildFileSearchSection(files: List<ProjectFileEntry>, rawQuery: String): String {
+        val query = rawQuery.lowercase(Locale.getDefault())
+        val matches = files
+            .asSequence()
+            .filter { it.lowerRelativePath.contains(query) }
+            .take(MAX_FILE_SEARCH_RESULTS)
+            .toList()
+
+        if (matches.isEmpty()) {
+            return "File search results for \"$rawQuery\":\n(No matching files found)"
+        }
+
+        val body = matches.joinToString("\n") { "- ${it.relativePath}" }
+        return "File search results for \"$rawQuery\":\n$body"
+    }
+
+    private fun buildTextSearchSection(files: List<ProjectFileEntry>, query: String): String {
+        val results = mutableListOf<String>()
+
+        for (file in files) {
+            if (file.extension !in TEXT_EXTENSIONS) continue
+
+            val content = ReadAction.compute<String, RuntimeException> {
+                runCatching { String(file.virtualFile.contentsToByteArray(), Charsets.UTF_8) }
+                    .getOrDefault("")
+            }
+            if (content.isBlank()) continue
+
+            val matchingLines = content
+                .lineSequence()
+                .mapIndexedNotNull { index, line ->
+                    if (line.contains(query, ignoreCase = true)) {
+                        "${index + 1}: ${line.trim().take(MAX_TEXT_LINE_CHARS)}"
+                    } else {
+                        null
+                    }
+                }
+                .take(MAX_MATCHING_LINES_PER_FILE)
+                .toList()
+
+            if (matchingLines.isNotEmpty()) {
+                results += "File: ${file.relativePath}\n${matchingLines.joinToString("\n")}"
+            }
+
+            if (results.size >= MAX_TEXT_SEARCH_FILES) break
+        }
+
+        if (results.isEmpty()) {
+            return "Text search results for \"$query\":\n(No matching text found)"
+        }
+
+        return "Text search results for \"$query\":\n${results.joinToString("\n\n")}"
     }
 
     private fun buildRelevantSnippetsSection(files: List<ProjectFileEntry>, queryTerms: Set<String>): String {
@@ -392,6 +475,10 @@ class ProjectReadOnlyContextProvider(
         private const val MAX_DYNAMIC_RELEVANT_FILES = 20
         private const val MAX_SNIPPET_CHARS = 2_000
         private const val SNIPPET_LINES = 24
+        private const val MAX_FILE_SEARCH_RESULTS = 30
+        private const val MAX_TEXT_SEARCH_FILES = 5
+        private const val MAX_MATCHING_LINES_PER_FILE = 6
+        private const val MAX_TEXT_LINE_CHARS = 220
         private val EXCLUDED_PREFIXES = setOf(".git/", ".idea/", "build/", "out/", ".gradle/")
         private val ALLOWED_EXTENSIONS = setOf("kt", "java", "kts", "xml", "gradle", "md", "json", "yaml", "yml", "properties", "env")
         private val TEXT_EXTENSIONS = ALLOWED_EXTENSIONS + "txt"
