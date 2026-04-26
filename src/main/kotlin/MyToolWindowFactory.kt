@@ -11,17 +11,28 @@ import com.intellij.ui.components.JBTextArea
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.content.ContentFactory
 import java.awt.BorderLayout
+import java.util.concurrent.ConcurrentHashMap
 import javax.swing.JButton
 import javax.swing.JPanel
 
 class MyToolWindowFactory : ToolWindowFactory {
+    companion object {
+        private val windowsByProject = ConcurrentHashMap<Project, MyToolWindow>()
+
+        fun getWindow(project: Project): MyToolWindow? = windowsByProject[project]
+    }
+
     override fun shouldBeAvailable(project: Project) = true
 
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
         val myToolWindow = MyToolWindow(project)
+        windowsByProject[project] = myToolWindow
         val content = ContentFactory.getInstance().createContent(myToolWindow.getContent(), null, false)
         val disposable = Disposer.newDisposable("SaidkickToolWindow")
         content.setDisposer(disposable)
+        Disposer.register(disposable) {
+            windowsByProject.remove(project)
+        }
         myToolWindow.start(disposable)
         toolWindow.contentManager.addContent(content)
     }
@@ -83,9 +94,18 @@ class MyToolWindowFactory : ToolWindowFactory {
             val text = inputField.text.trim()
             if (text.isBlank()) return
 
-            pushUserMessage(text)
             inputField.text = ""
+            submitPrompt(text)
+        }
 
+        fun submitExternalPrompt(prompt: String) {
+            submitPrompt(prompt.trim())
+        }
+
+        private fun submitPrompt(text: String) {
+            if (text.isBlank()) return
+
+            pushUserMessage(text)
             val reply = assistant.respondTo(text)
             pushAssistantMessage(reply)
         }

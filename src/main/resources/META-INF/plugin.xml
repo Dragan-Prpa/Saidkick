@@ -37,4 +37,13 @@
     <extensions defaultExtensionNs="org.jetbrains.kotlin">
         <supportsKotlinPluginMode supportsK2="true"/>
     </extensions>
+
+    <actions>
+        <action id="com.example.ExplainSelectionAction"
+                class="com.example.ExplainSelectionAction"
+                text="Explain with Saidkick"
+                description="Explain selected code with Saidkick">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
