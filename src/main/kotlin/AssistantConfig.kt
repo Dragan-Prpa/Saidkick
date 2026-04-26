@@ -18,6 +18,10 @@ data class AssistantConfig(
     val llmModel: String,
     val llmTimeoutSeconds: Int,
     val idleThresholdSeconds: Int,
+    val elevenLabsApiKey: String?,
+    val elevenLabsVoiceId: String?,
+    val elevenLabsModel: String,
+    val elevenLabsOutputFormat: String,
 ) {
     companion object {
         fun fromEnv(project: Project): AssistantConfig {
@@ -57,6 +61,16 @@ data class AssistantConfig(
             val idleThresholdSeconds = projectEnv["INACTIVITY_PERIOD"]?.toIntOrNull()
                 ?: projectEnv["IDLE_THRESHOLD_SECONDS"]?.toIntOrNull()
                 ?: 300
+            val elevenLabsApiKey = llmEnv["ELEVENLABS_API_KEY"]
+                ?.takeIf { it.isNotBlank() }
+            val elevenLabsVoiceId = llmEnv["ELEVENLABS_VOICE_ID"]
+                ?.takeIf { it.isNotBlank() }
+            val elevenLabsModel = llmEnv["ELEVENLABS_MODEL"]
+                .orEmpty()
+                .ifBlank { "eleven_flash_v2_5" }
+            val elevenLabsOutputFormat = llmEnv["ELEVENLABS_OUTPUT_FORMAT"]
+                .orEmpty()
+                .ifBlank { "pcm_24000" }
 
             return AssistantConfig(
                 assistantName = assistantName,
@@ -70,6 +84,10 @@ data class AssistantConfig(
                 llmModel = llmModel,
                 llmTimeoutSeconds = llmTimeoutSeconds,
                 idleThresholdSeconds = idleThresholdSeconds,
+                elevenLabsApiKey = elevenLabsApiKey,
+                elevenLabsVoiceId = elevenLabsVoiceId,
+                elevenLabsModel = elevenLabsModel,
+                elevenLabsOutputFormat = elevenLabsOutputFormat,
             )
         }
 

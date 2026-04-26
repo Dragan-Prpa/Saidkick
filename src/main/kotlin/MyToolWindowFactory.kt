@@ -1,5 +1,6 @@
 package com.example
 
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.Disposer
@@ -84,10 +85,16 @@ class MyToolWindowFactory : ToolWindowFactory {
         }
 
         private fun postProactiveReply(internalPrompt: String) {
-            val reply = assistant.respondToInternalPrompt(internalPrompt)
-            if (reply.isNotBlank()) {
-                pushAssistantMessage(reply)
-                SaidkickNotifications.info(project, config.assistantName, reply)
+            ApplicationManager.getApplication().executeOnPooledThread {
+                val reply = assistant.respondToInternalPrompt(internalPrompt)
+                if (reply.isBlank()) return@executeOnPooledThread
+
+                ApplicationManager.getApplication().invokeLater {
+                    pushAssistantMessage(reply)
+                    SaidkickNotifications.info(project, config.assistantName, reply)
+                }
+
+                triggerAssistantTts(reply)
             }
         }
 
@@ -111,6 +118,14 @@ class MyToolWindowFactory : ToolWindowFactory {
             pushUserMessage(text)
             val reply = assistant.respondTo(text)
             pushAssistantMessage(reply)
+            triggerAssistantTts(reply)
+        }
+
+        private fun triggerAssistantTts(message: String) {
+            if (message.isBlank()) return
+            ApplicationManager.getApplication().executeOnPooledThread {
+                assistantTts.speakStreaming(message, config)
+            }
         }
 
         private fun pushUserMessage(message: String) {
