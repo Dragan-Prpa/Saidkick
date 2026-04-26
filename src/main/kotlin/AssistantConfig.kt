@@ -9,6 +9,8 @@ import kotlin.io.path.exists
 data class AssistantConfig(
     val assistantName: String,
     val developerName: String,
+    val assistantColor: String,
+    val developerColor: String,
     val assistantPersonality: PersonalityPreset,
     val requiresIdentitySetup: Boolean,
     val llmBaseUrl: String,
@@ -28,10 +30,18 @@ data class AssistantConfig(
             val developerName = projectEnv["DEVELOPER_NAME"]
                 .orEmpty()
                 .ifBlank { "Developer" }
+            val assistantColor = projectEnv["ASSISTANT_COLOR"]
+                .orEmpty()
+                .ifBlank { "yellow" }
+            val developerColor = projectEnv["DEVELOPER_COLOR"]
+                .orEmpty()
+                .ifBlank { "red" }
             val assistantPersonality = PersonalityPreset.fromValue(projectEnv["ASSISTANT_PERSONALITY"])
             val requiresIdentitySetup = isMissing(projectEnv, "ASSISTANT_NAME") ||
                 isMissing(projectEnv, "DEVELOPER_NAME") ||
-                isMissing(projectEnv, "ASSISTANT_PERSONALITY")
+                isMissing(projectEnv, "ASSISTANT_PERSONALITY") ||
+                isMissing(projectEnv, "ASSISTANT_COLOR") ||
+                isMissing(projectEnv, "DEVELOPER_COLOR")
 
             val llmBaseUrl = llmEnv["LLM_BASE_URL"]
                 .orEmpty()
@@ -51,6 +61,8 @@ data class AssistantConfig(
             return AssistantConfig(
                 assistantName = assistantName,
                 developerName = developerName,
+                assistantColor = assistantColor,
+                developerColor = developerColor,
                 assistantPersonality = assistantPersonality,
                 requiresIdentitySetup = requiresIdentitySetup,
                 llmBaseUrl = llmBaseUrl,

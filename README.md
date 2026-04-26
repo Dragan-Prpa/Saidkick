@@ -31,6 +31,8 @@ LLM_TIMEOUT_SECONDS=20
 ```dotenv
 ASSISTANT_NAME=Saidkick
 DEVELOPER_NAME=Developer
+ASSISTANT_COLOR=blue
+DEVELOPER_COLOR=green
 ASSISTANT_PERSONALITY=coach
 
 INACTIVITY_PERIOD=300
@@ -42,6 +44,6 @@ On startup, if identity values are fully configured, Saidkick greets the develop
 
 Proactive LLM responses are constrained to exactly one sentence and at most 20 words. The saved-file counter resets automatically after a successful commit.
 
-On startup, if any of `ASSISTANT_NAME`, `DEVELOPER_NAME`, or `ASSISTANT_PERSONALITY` are missing from the opened project `.env`, Saidkick sends an unprompted setup message that starts with `Hello Developer, I am Saidkick` and explains exactly how to define them. After updating `.env`, fully restart the IDE so the plugin reloads the new values.
+On startup, if any of `ASSISTANT_NAME`, `DEVELOPER_NAME`, `ASSISTANT_COLOR`, `DEVELOPER_COLOR`, or `ASSISTANT_PERSONALITY` are missing from the opened project `.env`, Saidkick sends an unprompted setup message that starts with `Hello Developer, I am Saidkick` and explains exactly how to define them. `ASSISTANT_COLOR` and `DEVELOPER_COLOR` should use color names (for example: `red`, `green`, `yellow`, `purple`, `brown`). After updating `.env`, fully restart the IDE so the plugin reloads the new values.
 
 Personality descriptions used in prompt injection are documented in `docs/personality-spec.md`.

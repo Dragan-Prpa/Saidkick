@@ -7,13 +7,16 @@ import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.components.JBScrollPane
-import com.intellij.ui.components.JBTextArea
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.content.ContentFactory
 import java.awt.BorderLayout
+import java.awt.Color
 import java.util.concurrent.ConcurrentHashMap
 import javax.swing.JButton
 import javax.swing.JPanel
+import javax.swing.JTextPane
+import javax.swing.text.SimpleAttributeSet
+import javax.swing.text.StyleConstants
 
 class MyToolWindowFactory : ToolWindowFactory {
     companion object {
@@ -40,14 +43,14 @@ class MyToolWindowFactory : ToolWindowFactory {
     class MyToolWindow(private val project: Project) {
         private val config = AssistantConfig.fromEnv(project)
         private val assistant = SaidkickAssistant(project = project, config = config)
-        private val conversationArea = JBTextArea()
+        private val conversationArea = JTextPane()
         private val inputField = JBTextField()
         private val sendButton = JButton(MyMessageBundle.message("toolwindow.Saidkick.send.button"))
+        private val assistantTagColor = resolveColor(config.assistantColor, Color(58, 120, 246))
+        private val developerTagColor = resolveColor(config.developerColor, Color(56, 142, 60))
 
         private val content = JBPanel<JBPanel<*>>(BorderLayout()).apply {
             conversationArea.isEditable = false
-            conversationArea.lineWrap = true
-            conversationArea.wrapStyleWord = true
 
             val center = JBScrollPane(conversationArea)
             val south = JPanel(BorderLayout()).apply {
@@ -111,11 +114,11 @@ class MyToolWindowFactory : ToolWindowFactory {
         }
 
         private fun pushUserMessage(message: String) {
-            appendLine("You: $message")
+            appendMessage(tag = "You:", body = message, tagColor = developerTagColor)
         }
 
         private fun pushAssistantMessage(message: String) {
-            appendLine("${config.assistantName}: $message")
+            appendMessage(tag = "${config.assistantName}:", body = message, tagColor = assistantTagColor)
         }
 
 
@@ -128,6 +131,10 @@ class MyToolWindowFactory : ToolWindowFactory {
 
                 DEVELOPER_NAME=YourName
 
+                ASSISTANT_COLOR=yellow (example color names: red, green, yellow, purple, brown)
+
+                DEVELOPER_COLOR=red (example color names: red, green, yellow, purple, brown)
+
                 ASSISTANT_PERSONALITY=coach (allowed: coach, architect, cheerleader, reviewer)
 
                 Call these variables exactly as written.
@@ -135,11 +142,44 @@ class MyToolWindowFactory : ToolWindowFactory {
             """.trimIndent()
         }
 
-        private fun appendLine(line: String) {
-            if (conversationArea.text.isNotBlank()) {
-                conversationArea.append("\n\n")
+        private fun appendMessage(tag: String, body: String, tagColor: Color) {
+            val document = conversationArea.styledDocument
+            if (document.length > 0) {
+                document.insertString(document.length, "\n\n", normalStyle())
             }
-            conversationArea.append(line)
+            document.insertString(document.length, "$tag ", tagStyle(tagColor))
+            document.insertString(document.length, body, normalStyle())
+            conversationArea.caretPosition = document.length
+        }
+
+        private fun normalStyle(): SimpleAttributeSet {
+            return SimpleAttributeSet().apply {
+                StyleConstants.setForeground(this, conversationArea.foreground)
+            }
+        }
+
+        private fun tagStyle(color: Color): SimpleAttributeSet {
+            return SimpleAttributeSet().apply {
+                StyleConstants.setForeground(this, color)
+            }
+        }
+
+        private fun resolveColor(name: String, defaultColor: Color): Color {
+            return when (name.trim().lowercase()) {
+                "black" -> Color.BLACK
+                "blue" -> Color.BLUE
+                "brown" -> Color(121, 85, 72)
+                "cyan" -> Color.CYAN
+                "gray", "grey" -> Color.GRAY
+                "green" -> Color(56, 142, 60)
+                "magenta", "purple" -> Color(123, 31, 162)
+                "orange" -> Color.ORANGE
+                "pink" -> Color.PINK
+                "red" -> Color.RED
+                "white" -> Color.WHITE
+                "yellow" -> Color(249, 168, 37)
+                else -> defaultColor
+            }
         }
 
         fun getContent(): JBPanel<JBPanel<*>> = content
