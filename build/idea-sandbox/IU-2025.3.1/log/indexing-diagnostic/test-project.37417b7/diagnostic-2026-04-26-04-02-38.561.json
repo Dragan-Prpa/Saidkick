@@ -1,0 +1,131 @@
+{
+  "appInfo" : {
+    "build" : "253.29346.138",
+    "buildDate" : "2025-12-18T05:01:00Z[UTC]",
+    "productCode" : "IU",
+    "generated" : "2026-04-26T02:02:38.561291Z",
+    "os" : "macOS 26.3.1",
+    "runtime" : "JetBrains s.r.o. 21.0.9 21.0.9+10-b1163.86"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 2147483648,
+    "numberOfProcessors" : 10,
+    "maxNumberOfIndexingThreads" : 9,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "type" : "DumbIndexing",
+  "projectIndexingActivityHistory" : {
+    "projectName" : "test-project",
+    "times" : {
+      "scanningIds" : [ 1 ],
+      "contentLoadingVisibleTime" : 3646517,
+      "retrievingChangedDuringIndexingFilesTime" : 254708,
+      "separateApplyingIndexesVisibleTime" : 7639192,
+      "updatingStart" : "2026-04-26T02:02:38.495533Z",
+      "updatingEnd" : "2026-04-26T02:02:38.560397625Z",
+      "totalWallTimeWithPauses" : 64864625,
+      "wallTimeOnPause" : 0,
+      "isCancelled" : false,
+      "dumbWallTimeWithPauses" : 64864625,
+      "dumbWallTimeWithoutPauses" : 64864625,
+      "dumbModeStart" : "2026-04-26T02:02:38.495533Z",
+      "totalWallTimeWithoutPauses" : 64864625
+    },
+    "fileCount" : {
+      "numberOfChangedDuringIndexingFiles" : 0,
+      "numberOfFilesIndexedByInfrastructureExtensionsDuringIndexingStage" : 0,
+      "numberOfFilesIndexedWithLoadingContent" : 1,
+      "numberOfNothingToWriteFiles" : 0
+    },
+    "totalStatsPerFileType" : [ {
+      "fileType" : "textmate",
+      "partOfTotalProcessingTime" : {
+        "part" : 10443500,
+        "total" : 10443500
+      },
+      "partOfTotalContentLoadingTime" : {
+        "part" : 1073167,
+        "total" : 1073167
+      },
+      "totalNumberOfFiles" : 1,
+      "totalFilesSize" : 185,
+      "totalProcessingSpeed" : {
+        "totalBytes" : 185,
+        "totalCpuTime" : 10443500
+      },
+      "biggestContributors" : [ {
+        "providerName" : "<indexing queue>",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : 185,
+        "partOfTotalProcessingTimeOfThisFileType" : {
+          "part" : 10443500,
+          "total" : 10443500
+        }
+      } ]
+    } ],
+    "totalStatsPerBaseLanguage" : [ {
+      "language" : "textmate",
+      "partOfTotalProcessingTime" : {
+        "part" : 10443500,
+        "total" : 10443500
+      },
+      "partOfTotalContentLoadingTime" : {
+        "part" : 2146334,
+        "total" : 1073167
+      },
+      "totalNumberOfFiles" : 1,
+      "totalFilesSize" : 185,
+      "totalProcessingSpeed" : {
+        "totalBytes" : 185,
+        "totalCpuTime" : 10443500
+      }
+    } ],
+    "totalStatsPerIndexer" : [ {
+      "indexId" : "IdIndex",
+      "shardsCount" : 1,
+      "partOfTotalIndexingTime" : {
+        "part" : 3294084,
+        "total" : 4367375
+      },
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : 185,
+      "indexValueChangerEvaluationSpeed" : {
+        "totalBytes" : 185,
+        "totalCpuTime" : 3294084
+      }
+    }, {
+      "indexId" : "Trigram.Index",
+      "shardsCount" : 1,
+      "partOfTotalIndexingTime" : {
+        "part" : 1073291,
+        "total" : 4367375
+      },
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : 185,
+      "indexValueChangerEvaluationSpeed" : {
+        "totalBytes" : 185,
+        "totalCpuTime" : 1073291
+      }
+    } ],
+    "statisticsOfChangedDuringIndexingFiles" : {
+      "numberOfFiles" : 0,
+      "retrievingTime" : 254708
+    },
+    "fileProviderStatistics" : [ {
+      "providerName" : "<indexing queue>",
+      "totalNumberOfIndexedFiles" : 1,
+      "totalNumberOfFilesFullyIndexedByExtensions" : 0,
+      "totalNumberOfNothingToWriteFiles" : 0,
+      "totalIndexingVisibleTime" : 35486000,
+      "contentLoadingVisibleTime" : 3646517,
+      "numberOfTooLargeForIndexingFiles" : 0,
+      "slowIndexedFiles" : [ ],
+      "filesFullyIndexedByExtensions" : [ ],
+      "separateApplyingIndexesVisibleTime" : 7639192
+    } ],
+    "visibleTimeToAllThreadTimeRatio" : 3.3979030018671903
+  }
+}

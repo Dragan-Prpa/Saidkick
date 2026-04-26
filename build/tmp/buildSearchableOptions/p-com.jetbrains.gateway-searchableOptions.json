@@ -1,0 +1,2 @@
+{"id":"preferences.keymap","name":"|b|messages.KeyMapBundle|k|keymap.display.name|"}
+{"id":"gateway.deploy.ssh.trusted.hosts","name":"|b|messages.GatewayBundle|k|configurable.name.trusted.hosts|","entries":[{"hit":"|b|messages.GatewayBundle|k|configurable.name.trusted.hosts|"},{"hit":"|b|messages.GatewayBundle|k|label.deploy.trusted.hosts.description|"}]}

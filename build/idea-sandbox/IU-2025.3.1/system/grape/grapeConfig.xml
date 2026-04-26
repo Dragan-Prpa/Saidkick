@@ -1,0 +1,12 @@
+<ivysettings>
+  <settings defaultResolver="downloadGrapes"/>
+  <resolvers>
+    <chain name="downloadGrapes" returnFirst="true">
+    
+
+
+      <ibiblio name="ibiblio" m2compatible="true"/>
+      <ibiblio name="jcenter" root="https://jcenter.bintray.com/" m2compatible="true"/>
+    </chain>
+  </resolvers>
+</ivysettings>

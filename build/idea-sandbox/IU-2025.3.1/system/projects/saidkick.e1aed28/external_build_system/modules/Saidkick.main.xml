@@ -1,0 +1,290 @@
+<module>
+  <component name="DeprecatedModuleOptionManager">
+    <option key="type" value="JAVA_MODULE" />
+  </component>
+  <component name="ExternalFacetManager">
+    <facet __external-system-id="GRADLE" type="kotlin-language" name="Kotlin">
+      <configuration version="5" platform="JVM 21" allPlatforms="JVM [21]" useProjectSettings="false" pureKotlinSourceFolders="$MODULE_DIR$/../../src/main/kotlin;/Users/draganprpa/IdeaProjects/Saidkick/src/test/kotlin">
+        <compilerSettings />
+        <compilerArguments>
+          <flagArguments>
+            <flagArg name="allowNoSourceFiles" arg="true" />
+            <flagArg name="noReflect" arg="true" />
+            <flagArg name="noStdlib" arg="true" />
+          </flagArguments>
+          <stringArguments>
+            <stringArg name="destination" arg="$MODULE_DIR$/../../build/classes/kotlin/main" />
+            <stringArg name="jvmTarget" arg="21" />
+            <stringArg name="moduleName" arg="Saidkick" />
+            <stringArg name="apiVersion" arg="2.2" />
+            <stringArg name="languageVersion" arg="2.2" />
+          </stringArguments>
+          <arrayArguments>
+            <arrayArg name="pluginClasspaths">
+              <args>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-jvm/2.2.20/785d5ffea49d9dc289b200d0ff3e0ce6e9ba2395/kotlin-scripting-jvm-2.2.20.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-common/2.2.20/79e0c2cc15b84711ac1de87e6a257acd151cb999/kotlin-scripting-common-2.2.20.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.2.20/5380b19fa1924399b62ce3a1faffebb2b4f82272/kotlin-stdlib-2.2.20.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/2.2.20/4c679cbeac0bb583b75c3a080013da8eaf240807/kotlin-script-runtime-2.2.20.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar</arg>
+              </args>
+            </arrayArg>
+            <arrayArg name="pluginOptions" />
+          </arrayArguments>
+        </compilerArguments>
+      </configuration>
+    </facet>
+  </component>
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.example" externalSystemModuleType="sourceSet" externalSystemModuleVersion="1.0.0-SNAPSHOT" linkedProjectId="Saidkick:main" linkedProjectPath="$MODULE_DIR$/../.." rootProjectPath="$MODULE_DIR$/../.." />
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../build/classes/kotlin/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: bundledPlugin:org.jetbrains.kotlin:IU-253.29346.138">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/completion-ranking-kotlin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/ehcache.sizeof.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/jackson-dataformat-toml.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/javax-inject.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlin-base-jps.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlin-gradle-tooling.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlin-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlin-plugin-shared.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.allopen-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.assignment-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.compose-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.js-plain-objects-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.kotlin-compiler-common.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.kotlin-compiler-fe10.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.kotlin-compiler-ir.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.kotlin-dataframe-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.kotlin-jps-common.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.kotlinx-serialization-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.lombok-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.noarg-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.parcelize-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.sam-with-receiver-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/kotlinc.scripting-compiler-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/Kotlin/lib/vavr.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: idea:idea:aarch64:2025.3.1">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/annotations.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/app.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/app-backend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/eclipse.lsp4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/eclipse.lsp4j.debug.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/eclipse.lsp4j.jsonrpc.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/eclipse.lsp4j.jsonrpc.debug.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/external-system-rt.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/externalProcess-rt.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/forms_rt.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/groovy.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/idea_rt.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/intellij-test-discovery.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/javax.activation.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/javax.annotation-api.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jaxb-api.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jaxb-runtime.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jps-model.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jsch-agent.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/lib.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/lib-backend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.aalto.xml.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.asm.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.asm.tools.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.automaton.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.blockmap.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.bouncy.castle.pgp.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.bouncy.castle.provider.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.caffeine.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.cglib.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.classgraph.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.cli.parser.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.commons.cli.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.commons.codec.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.commons.compress.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.commons.imaging.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.commons.io.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.commons.lang3.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.commons.logging.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.fastutil.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.gson.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.guava.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.hash4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.hdr.histogram.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.http.client.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.icu4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.imgscalr.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.ini4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.ion.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jackson.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jackson.databind.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jackson.dataformat.yaml.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jackson.jr.objects.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jackson.module.kotlin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.java.websocket.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.javax.annotation.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jaxen.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jbr.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jcef.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jcip.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jediterm.core.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jediterm.ui.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jettison.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jsonpath.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jsoup.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jsvg.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jvm.native.trusted.roots.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.jzlib.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlin.reflect.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlinx.collections.immutable.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlinx.coroutines.slf4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlinx.datetime.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlinx.html.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlinx.io.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlinx.serialization.core.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlinx.serialization.json.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kotlinx.serialization.protobuf.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.kryo5.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.ktor.client.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.ktor.client.cio.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.ktor.io.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.ktor.network.tls.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.ktor.utils.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.lz4.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.markdown.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.miglayout.swing.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.mvstore.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.oro.matcher.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.proxy.vole.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.pty4j.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.rd.text.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.rhino.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.snakeyaml.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.snakeyaml.engine.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.sshj.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.stream.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.velocity.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.winp.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.xerces.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.xstream.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.xtext.xbase.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.libraries.xz.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.debugger.impl.rpc.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.debugger.impl.shared.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.eel.impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.find.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.managed.cache.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.polySymbols.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.polySymbols.backend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.rpc.topics.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.scopes.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.vcs.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.vcs.core.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.platform.vcs.shared.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.regexp.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.analysis.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.analysis.impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.dom.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.dom.impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.parser.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.psi.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.psi.impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.structureView.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.structureView.impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.syntax.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/module-intellij.xml.ui.common.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/opentelemetry.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/platform-loader.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/product.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/product-backend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/protobuf.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/rd.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/rhino.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/stats.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/trove.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/util.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/util-8.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/util_rt.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.ml.impl:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.collaborationTools:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.scriptDebugger.ui:IU-253.29346.138" level="project" />
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Gradle: bundledPlugin:com.intellij.java:IU-253.29346.138">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/aether-dependency-resolver.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/completion-ranking-java.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/debugger-memory-agent.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/java-impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/java-impl-frontend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/javac2.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jb-jdi.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jgoodies-common.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jps-builders.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jps-builders-6.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jps-javac-extension.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/jps-launcher.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/kotlin-metadata.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/maven-resolver-connector-basic.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/maven-resolver-transport-file.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/maven-resolver-transport-http.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.debugger.impl.frontend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.duplicates.analysis.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.duplicatesDetection.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.execution.impl.backend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.execution.impl.frontend.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.featuresTrainer.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.jam.impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.langInjection.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.langInjection.jps.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.structuralSearch.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.unscramble.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.java.vcs.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.jvm.analysis.impl.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/modules/intellij.profiler.ultimate.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/netty-codec-protobuf.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/sa-jdwp.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.backend:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.dvcs.impl:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.log.impl:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.dvcs.impl.shared:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.scriptDebugger.backend:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.spellchecker:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.impl.lang:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.dvcs:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.impl.shared:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.impl:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.log:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.log.graph.impl:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.scriptDebugger.protocolReaderRuntime:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.libraries.lucene.common:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.kernel.backend:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.libraries.microba:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.vcs.log.graph:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.rpc.backend:IU-253.29346.138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: bundledModule:intellij.platform.kernel.impl:IU-253.29346.138" level="project" />
+  </component>
+</module>

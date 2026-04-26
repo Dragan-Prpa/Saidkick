@@ -1,0 +1,2 @@
+{"id":"preferences.keymap","name":"|b|messages.KeyMapBundle|k|keymap.display.name|","entries":[{"hit":"|b|messages.JpaModelBundle|k|group.com.intellij.orm.structure.popup.new.text|","path":"ActionManager"}]}
+{"id":"fileTemplates","name":"|b|messages.IdeBundle|k|title.file.templates|","entries":[{"hit":"com.intellij.jpb.JpaEntity"},{"hit":"com.intellij.jpb.NewClass"},{"hit":"com.intellij.jpb.NewDataClass"},{"hit":"com.intellij.jpb.NewRecord"}]}

@@ -1,0 +1,79 @@
+{
+  "appInfo" : {
+    "build" : "253.29346.138",
+    "buildDate" : "2025-12-18T05:01:00Z[UTC]",
+    "productCode" : "IU",
+    "generated" : "2026-04-26T01:39:50.06847Z",
+    "os" : "macOS 26.3.1",
+    "runtime" : "JetBrains s.r.o. 21.0.9 21.0.9+10-b1163.86"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 2147483648,
+    "numberOfProcessors" : 10,
+    "maxNumberOfIndexingThreads" : 9,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "type" : "Scanning",
+  "projectIndexingActivityHistory" : {
+    "projectName" : "Saidkick",
+    "times" : {
+      "scanningReason" : "changes in: \"Module 'Saidkick.main' (all roots)\", \"Module 'Saidkick.test' (all roots)\"",
+      "scanningType" : "PARTIAL",
+      "scanningId" : 3,
+      "creatingIteratorsTime" : 0,
+      "concurrentHandlingWallTimeWithoutPauses" : 0,
+      "concurrentHandlingWallTimeWithPauses" : 0,
+      "concurrentHandlingSumOfThreadTimesWithPauses" : 6702709,
+      "concurrentIterationAndScannersApplicationSumOfThreadTimesWithPauses" : 1466042,
+      "concurrentFileCheckSumOfThreadTimesWithPauses" : 5008750,
+      "delayedPushPropertiesStageTime" : 0,
+      "indexExtensionsTime" : 46834,
+      "dumbWallTimeWithPauses" : 0,
+      "dumbWallTimeWithoutPauses" : 0,
+      "updatingStart" : "2026-04-26T01:39:50.049513Z",
+      "updatingEnd" : "2026-04-26T01:39:50.067782833Z",
+      "totalWallTimeWithPauses" : 18269833,
+      "wallTimeOnPause" : 350000,
+      "isCancelled" : false,
+      "totalWallTimeWithoutPauses" : 17919833
+    },
+    "fileCount" : {
+      "numberOfFileProviders" : 2,
+      "numberOfScannedFiles" : 16,
+      "numberOfFilesIndexedByInfrastructureExtensionsDuringScan" : 0,
+      "numberOfFilesScheduledForIndexingAfterScan" : 13
+    },
+    "scanningStatistics" : [ {
+      "providerName" : "Module 'Saidkick.main' (all roots)",
+      "numberOfScannedFiles" : 16,
+      "numberOfSkippedFiles" : 0,
+      "numberOfFilesForIndexing" : 13,
+      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
+      "filesFullyIndexedByInfrastructureExtensions" : [ ],
+      "statusTime" : 1497041,
+      "totalOneThreadTimeWithPauses" : 5955250,
+      "iterationAndScannersApplicationTime" : 848875,
+      "filesCheckTime" : 5006583,
+      "timeProcessingUpToDateFiles" : 96168,
+      "timeUpdatingContentLessIndexes" : 179373,
+      "timeIndexingWithoutContentViaInfrastructureExtension" : 46834,
+      "roots" : [ ]
+    }, {
+      "providerName" : "Module 'Saidkick.test' (all roots)",
+      "numberOfScannedFiles" : 0,
+      "numberOfSkippedFiles" : 0,
+      "numberOfFilesForIndexing" : 0,
+      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
+      "filesFullyIndexedByInfrastructureExtensions" : [ ],
+      "statusTime" : 0,
+      "totalOneThreadTimeWithPauses" : 747459,
+      "iterationAndScannersApplicationTime" : 617167,
+      "filesCheckTime" : 2167,
+      "timeProcessingUpToDateFiles" : 0,
+      "timeUpdatingContentLessIndexes" : 0,
+      "timeIndexingWithoutContentViaInfrastructureExtension" : 0,
+      "roots" : [ ]
+    } ]
+  }
+}

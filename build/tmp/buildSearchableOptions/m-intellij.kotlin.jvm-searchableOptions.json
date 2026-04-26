@@ -1,0 +1,1 @@
+{"id":"preferences.keymap","name":"|b|messages.KeyMapBundle|k|keymap.display.name|","entries":[{"hit":"|b|messages.ActionsBundle|k|group.EditorPopupMenu.Run.text|","path":"ActionManager"},{"hit":"|b|messages.ActionsBundle|k|group.RunContextPopupGroup.text|","path":"ActionManager"},{"hit":"|b|messages.KotlinJvmBundle|k|scratch.run.button|","path":"ActionManager"}]}

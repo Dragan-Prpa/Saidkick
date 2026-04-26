@@ -1,0 +1,93 @@
+<project version="4">
+  <component name="ExternalSystemProjectTracker"><![CDATA[{
+  "projectData": {
+    "GRADLE": {
+      "/Users/draganprpa/IdeaProjects/Saidkick": {
+        "settingsTracker": {
+          "isDirty": false,
+          "settingsFiles": {
+            "/Users/draganprpa/IdeaProjects/Saidkick/gradle.properties": 3256974875,
+            "/Users/draganprpa/IdeaProjects/Saidkick/gradle/libs.versions.toml": 1355218505,
+            "/Users/draganprpa/IdeaProjects/Saidkick/gradle/wrapper/gradle-wrapper.properties": 4210409995,
+            "/Users/draganprpa/IdeaProjects/Saidkick/build.gradle.kts": 852903416,
+            "/Users/draganprpa/IdeaProjects/Saidkick/settings.gradle.kts": 2148497461
+          }
+        }
+      }
+    }
+  }
+}]]></component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-9.2.1-bin/2t0n5ozlw9xmuyvbp7dnzaxug/gradle-9.2.1" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$" value="9.2.1" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="Saidkick" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="Saidkick" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="KotlinGradleFUSSettings">
+    <option name="gradleUserDirs" value="$USER_HOME$/.gradle" />
+  </component>
+  <component name="RestoreUpdateTree">{}</component>
+  <component name="VcsDirectoryMappingCache">
+    <option name="roots">
+      <set>
+        <option value="$PROJECT_DIR$" />
+      </set>
+    </option>
+    <option name="vcsName" value="Git" />
+  </component>
+  <component name="sourceFolderManager">
+    <sourceFolders>
+      <SourceFolderModelState>
+        <option name="moduleName" value="Saidkick.main" />
+        <option name="type" value="SOURCE" />
+        <option name="url" value="file://$PROJECT_DIR$/src/main/java" />
+      </SourceFolderModelState>
+      <SourceFolderModelState>
+        <option name="moduleName" value="Saidkick.test" />
+        <option name="type" value="TEST_SOURCE" />
+        <option name="url" value="file://$PROJECT_DIR$/src/test/java" />
+      </SourceFolderModelState>
+      <SourceFolderModelState>
+        <option name="moduleName" value="Saidkick.test" />
+        <option name="type" value="TEST_SOURCE" />
+        <option name="url" value="file://$PROJECT_DIR$/src/test/kotlin" />
+      </SourceFolderModelState>
+      <SourceFolderModelState>
+        <option name="moduleName" value="Saidkick.test" />
+        <option name="type" value="TEST_RESOURCE" />
+        <option name="url" value="file://$PROJECT_DIR$/src/test/resources" />
+      </SourceFolderModelState>
+    </sourceFolders>
+  </component>
+</project>

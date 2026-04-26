@@ -1,0 +1,2 @@
+{"id":"preferences.keymap","name":"|b|messages.KeyMapBundle|k|keymap.display.name|","entries":[{"hit":"|b|messages.SpringDataBundle|k|action.SpringRepositoryViewShowMembers.text|","path":"ActionManager"}]}
+{"id":"fileTemplates","name":"|b|messages.IdeBundle|k|title.file.templates|","entries":[{"hit":"Spring Repository"}]}

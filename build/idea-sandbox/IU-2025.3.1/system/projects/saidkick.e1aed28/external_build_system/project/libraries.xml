@@ -1,0 +1,298 @@
+<component name="libraryTable">
+  <library name="Gradle: bundledModule:intellij.libraries.lucene.common:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.libraries.lucene.common" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.libraries.lucene.common.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.libraries.microba:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.libraries.microba" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.libraries.microba.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.backend:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.backend" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.backend.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.collaborationTools:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.collaborationTools" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.collaborationTools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.kernel.backend:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.kernel.backend" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.kernel.backend.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.kernel.impl:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.kernel.impl" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.kernel.impl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.ml.impl:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.ml.impl" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.ml.impl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.rpc.backend:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.rpc.backend" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.rpc.backend.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.scriptDebugger.backend:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.scriptDebugger.backend" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.scriptDebugger.backend.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.scriptDebugger.protocolReaderRuntime:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.scriptDebugger.protocolReaderRuntime" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.scriptDebugger.protocolReaderRuntime.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.scriptDebugger.ui:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.scriptDebugger.ui" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.scriptDebugger.ui.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.dvcs.impl.shared:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.dvcs.impl.shared" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.dvcs.impl.shared.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.dvcs.impl:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.dvcs.impl" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.dvcs.impl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.dvcs:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.dvcs" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.dvcs.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.impl.lang:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.impl.lang" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.impl.lang.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.impl.shared:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.impl.shared" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.impl.shared.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.impl:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.impl" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.impl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.log.graph.impl:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.log.graph.impl" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.log.graph.impl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.log.graph:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.log.graph" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.log.graph.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.log.impl:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.log.impl" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.log.impl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.platform.vcs.log:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.platform.vcs.log" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.platform.vcs.log.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: bundledModule:intellij.spellchecker:IU-253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="bundledModule" artifactId="intellij.spellchecker" version="IU-253.29346.138" baseVersion="IU-253.29346.138" />
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.spellchecker.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+  <library name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.19.0" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="com.fasterxml.jackson.core" artifactId="jackson-annotations" version="2.19.0" baseVersion="2.19.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.19.0/fd1e7c56de1e5b658563c8c66d5074cceb4e3a0b/jackson-annotations-2.19.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.19.0/f4bddd52e5baac7dcff1ee0629c1bcc014755056/jackson-annotations-2.19.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: com.fasterxml.jackson.core:jackson-core:2.19.0" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="com.fasterxml.jackson.core" artifactId="jackson-core" version="2.19.0" baseVersion="2.19.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.19.0/a90640e59ea42632a8e331ff1d6b706cf306050a/jackson-core-2.19.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.19.0/2667d199da66b634f9c68f48c19768b768be8b55/jackson-core-2.19.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.19.0" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="com.fasterxml.jackson.core" artifactId="jackson-databind" version="2.19.0" baseVersion="2.19.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.19.0/b3f7506f6414fb04760561eec11a0880165c2a4a/jackson-databind-2.19.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.19.0/c8e6a69a49afb7c4a808f12e18e7879585a99764/jackson-databind-2.19.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.0" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="com.fasterxml.jackson.module" artifactId="jackson-module-kotlin" version="2.19.0" baseVersion="2.19.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.19.0/b26bbc89112d7b71e3ef4d523671f430e95426fe/jackson-module-kotlin-2.19.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.19.0/a55211ae6d5ca693a3f33489c1786752ea633dca/jackson-module-kotlin-2.19.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: com.jetbrains.intellij.platform:test-framework-common:253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="com.jetbrains.intellij.platform" artifactId="test-framework-common" version="253.29346.138" baseVersion="253.29346.138" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.platform/test-framework-common/253.29346.138/795fb73d2175a350707eaf9c70a82561677cd9f2/test-framework-common-253.29346.138.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.platform/test-framework-common/253.29346.138/9db41824d3e20aecc4ce0cb9964b350144f06951/test-framework-common-253.29346.138-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: com.jetbrains.intellij.platform:test-framework-core:253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="com.jetbrains.intellij.platform" artifactId="test-framework-core" version="253.29346.138" baseVersion="253.29346.138" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.platform/test-framework-core/253.29346.138/5cb0bc7d9e2601c36331c669921dce9162c2d816/test-framework-core-253.29346.138.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.platform/test-framework-core/253.29346.138/efb375161426706b3e04ae420c72bcbdd6731ddf/test-framework-core-253.29346.138-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: com.jetbrains.intellij.platform:test-framework:253.29346.138" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="com.jetbrains.intellij.platform" artifactId="test-framework" version="253.29346.138" baseVersion="253.29346.138" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.platform/test-framework/253.29346.138/de6463c679d349e654506acf197c0aa91479343b/test-framework-253.29346.138.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.platform/test-framework/253.29346.138/cd0c155e039f366783452c5277a608eacbafad0b/test-framework-253.29346.138-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: org.apache.httpcomponents:httpclient:4.5.14" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.5.14" baseVersion="4.5.14" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.14/1194890e6f56ec29177673f2f12d0b8e627dec98/httpclient-4.5.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.14/14321a360aa0e037c56d4c820747a84954d9196e/httpclient-4.5.14-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: org.apache.httpcomponents:httpcore:4.4.16" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="org.apache.httpcomponents" artifactId="httpcore" version="4.4.16" baseVersion="4.4.16" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/51cf043c87253c9f58b539c9f7e44c8894223850/httpcore-4.4.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/229e4c0eae80465381ae02adf61bca5558360777/httpcore-4.4.16-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: org.apache.httpcomponents:httpmime:4.5.14" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="org.apache.httpcomponents" artifactId="httpmime" version="4.5.14" baseVersion="4.5.14" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.14/6662758a1f1cb1149cf916bdac28332e0902ec44/httpmime-4.5.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.14/c13f53f11ae71339906acec9a746ccf0bf57dee0/httpmime-4.5.14-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.4.0" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="org.jetbrains.kotlinx" artifactId="kotlinx-collections-immutable-jvm" version="0.4.0" baseVersion="0.4.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-collections-immutable-jvm/0.4.0/82499bf608b0fc3ae6737a5eac1a1f1325279bbf/kotlinx-collections-immutable-jvm-0.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-collections-immutable-jvm/0.4.0/d7145edc360e0bb13c53e8d1e477007ded94985d/kotlinx-collections-immutable-jvm-0.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+  <library name="Gradle: org.jetbrains.runtime:jbr-api:1.9.0" type="java-imported" __external-system-id="GRADLE">
+    <properties groupId="org.jetbrains.runtime" artifactId="jbr-api" version="1.9.0" baseVersion="1.9.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.runtime/jbr-api/1.9.0/2bc161f5472b5fd5610740e4d6ebe896c811cb0e/jbr-api-1.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.runtime/jbr-api/1.9.0/65aa702f0e0bfd0a47be966a0dbd55d5e42bf8d5/jbr-api-1.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

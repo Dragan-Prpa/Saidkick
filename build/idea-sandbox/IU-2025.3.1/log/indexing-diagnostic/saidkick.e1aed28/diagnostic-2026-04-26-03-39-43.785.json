@@ -1,0 +1,80 @@
+{
+  "appInfo" : {
+    "build" : "253.29346.138",
+    "buildDate" : "2025-12-18T05:01:00Z[UTC]",
+    "productCode" : "IU",
+    "generated" : "2026-04-26T01:39:43.785293Z",
+    "os" : "macOS 26.3.1",
+    "runtime" : "JetBrains s.r.o. 21.0.9 21.0.9+10-b1163.86"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 2147483648,
+    "numberOfProcessors" : 10,
+    "maxNumberOfIndexingThreads" : 9,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "type" : "Scanning",
+  "projectIndexingActivityHistory" : {
+    "projectName" : "Saidkick",
+    "times" : {
+      "scanningReason" : "Merged changes in: \"Custom kind roots from entity (extensions, empty)\" with changes in: \"Module 'Saidkick' (all roots)\"",
+      "scanningType" : "PARTIAL",
+      "scanningId" : 2,
+      "creatingIteratorsTime" : 0,
+      "concurrentHandlingWallTimeWithoutPauses" : 0,
+      "concurrentHandlingWallTimeWithPauses" : 0,
+      "concurrentHandlingSumOfThreadTimesWithPauses" : 925213625,
+      "concurrentIterationAndScannersApplicationSumOfThreadTimesWithPauses" : 35663041,
+      "concurrentFileCheckSumOfThreadTimesWithPauses" : 888980541,
+      "delayedPushPropertiesStageTime" : 0,
+      "indexExtensionsTime" : 1868144,
+      "dumbModeStart" : "2026-04-26T01:39:42.879308Z",
+      "dumbWallTimeWithPauses" : 905070375,
+      "dumbWallTimeWithoutPauses" : 904979375,
+      "updatingStart" : "2026-04-26T01:39:42.879075Z",
+      "updatingEnd" : "2026-04-26T01:39:43.784378375Z",
+      "totalWallTimeWithPauses" : 905303375,
+      "wallTimeOnPause" : 91000,
+      "isCancelled" : false,
+      "totalWallTimeWithoutPauses" : 905212375
+    },
+    "fileCount" : {
+      "numberOfFileProviders" : 2,
+      "numberOfScannedFiles" : 2881,
+      "numberOfFilesIndexedByInfrastructureExtensionsDuringScan" : 0,
+      "numberOfFilesScheduledForIndexingAfterScan" : 612
+    },
+    "scanningStatistics" : [ {
+      "providerName" : "Module 'Saidkick' (all roots)",
+      "numberOfScannedFiles" : 2855,
+      "numberOfSkippedFiles" : 33,
+      "numberOfFilesForIndexing" : 612,
+      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
+      "filesFullyIndexedByInfrastructureExtensions" : [ ],
+      "statusTime" : 750467673,
+      "totalOneThreadTimeWithPauses" : 897026000,
+      "iterationAndScannersApplicationTime" : 35511583,
+      "filesCheckTime" : 861266458,
+      "timeProcessingUpToDateFiles" : 0,
+      "timeUpdatingContentLessIndexes" : 34020952,
+      "timeIndexingWithoutContentViaInfrastructureExtension" : 1868144,
+      "roots" : [ ]
+    }, {
+      "providerName" : "Custom kind roots from entity (extensions, empty)",
+      "numberOfScannedFiles" : 26,
+      "numberOfSkippedFiles" : 0,
+      "numberOfFilesForIndexing" : 0,
+      "numberOfFilesFullyIndexedByInfrastructureExtensions" : 0,
+      "filesFullyIndexedByInfrastructureExtensions" : [ ],
+      "statusTime" : 25914708,
+      "totalOneThreadTimeWithPauses" : 28187625,
+      "iterationAndScannersApplicationTime" : 151458,
+      "filesCheckTime" : 27714083,
+      "timeProcessingUpToDateFiles" : 399125,
+      "timeUpdatingContentLessIndexes" : 0,
+      "timeIndexingWithoutContentViaInfrastructureExtension" : 0,
+      "roots" : [ ]
+    } ]
+  }
+}

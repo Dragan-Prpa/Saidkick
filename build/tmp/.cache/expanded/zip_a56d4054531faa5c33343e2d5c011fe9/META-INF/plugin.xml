@@ -1,0 +1,36 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <idea-version since-build="253" />
+  <change-notes><![CDATA[Initial version]]></change-notes>
+  <version>1.0.0-SNAPSHOT</version>
+  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+  <id>com.example.Saidkick</id>
+  <!-- Public plugin name should be written in Title Case.
+     Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+  <name>Saidkick</name>
+  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+  <vendor>Saidkick</vendor>
+  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+  <description><![CDATA[Saidkick is a personified coding-buddy tool window for IntelliJ that chats with an OpenAI-compatible LLM,
+        greets the developer, and proactively pings them when idle or after many saved changes since the last commit.]]></description>
+  <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+  <depends>org.jetbrains.kotlin</depends>
+  <resource-bundle>messages.MyMessageBundle</resource-bundle>
+  <!-- Extensions defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+  <extensions defaultExtensionNs="com.intellij">
+    <notificationGroup id="Saidkick Notifications" displayType="BALLOON" isLogByDefault="true" />
+    <toolWindow id="MyToolWindow" factoryClass="com.example.MyToolWindowFactory" icon="AllIcons.Toolwindows.ToolWindowPalette" />
+    <checkinHandlerFactory implementation="com.example.SaidkickCheckinHandlerFactory" />
+  </extensions>
+  <extensions defaultExtensionNs="org.jetbrains.kotlin">
+    <supportsKotlinPluginMode supportsK2="true" />
+  </extensions>
+  <actions>
+    <action id="com.example.ExplainSelectionAction" class="com.example.ExplainSelectionAction" text="Explain with Saidkick" description="Explain selected code with Saidkick">
+      <add-to-group group-id="EditorPopupMenu" anchor="last" />
+    </action>
+  </actions>
+</idea-plugin>
