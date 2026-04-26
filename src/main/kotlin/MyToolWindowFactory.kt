@@ -39,7 +39,7 @@ class MyToolWindowFactory : ToolWindowFactory {
 
     class MyToolWindow(private val project: Project) {
         private val config = AssistantConfig.fromEnv(project)
-        private val assistant = SaidkickAssistant(config)
+        private val assistant = SaidkickAssistant(project = project, config = config)
         private val conversationArea = JBTextArea()
         private val inputField = JBTextField()
         private val sendButton = JButton(MyMessageBundle.message("toolwindow.Saidkick.send.button"))
