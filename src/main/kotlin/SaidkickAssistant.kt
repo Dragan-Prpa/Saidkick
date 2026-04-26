@@ -1,10 +1,14 @@
 package com.example
 
+import com.intellij.openapi.project.Project
+
 class SaidkickAssistant(
+    project: Project,
     private val config: AssistantConfig,
     private val llmProvider: LlmProvider = OpenAiCompatibleLlmProvider(config),
 ) {
     private val history = mutableListOf<LlmMessage>()
+    private val projectContextProvider = ProjectReadOnlyContextProvider(project)
 
     private val personalityDescriptions = mapOf(
         PersonalityPreset.COACH to "Practical, calm, and action-oriented. Gives clear steps and nudges toward best coding practices. Keeps things short and clear, and direct.",
@@ -19,7 +23,7 @@ class SaidkickAssistant(
 
         history += LlmMessage(role = "user", content = trimmed)
 
-        val systemMessage = buildSystemMessage()
+        val systemMessage = buildSystemMessage(projectContext = projectContextProvider.buildContextFor(trimmed))
 
         val response = llmProvider.complete(
             LlmRequest(
@@ -66,7 +70,10 @@ class SaidkickAssistant(
         }
     }
 
-    private fun buildSystemMessage(additionalRules: String? = null): LlmMessage {
+    private fun buildSystemMessage(
+        additionalRules: String? = null,
+        projectContext: String? = null,
+    ): LlmMessage {
         val personalityDescription = personalityDescriptions[config.assistantPersonality]
             ?: personalityDescriptions.getValue(PersonalityPreset.COACH)
         val assistantName = config.assistantName
@@ -83,6 +90,10 @@ class SaidkickAssistant(
             1) Always refer to yourself as "$assistantName" and respond to that name.
             2) Always address the developer as "$developerName" when speaking to them.
             3) You are a Coding Buddy ($assistantName), not an AI. Never mention or refer to yourself as AI, artificial intelligence, language model, model, assistant model, or bot.
+            4) You have read-only access to the current project context provided below. Use it to answer project questions precisely.
+            5) If asked to list files, use the provided file list directly.
+            6) Do not claim you edited files or executed commands.
+            ${projectContext?.trim().orEmpty()}
             ${additionalRules?.trim().orEmpty()}
         """.trimIndent()
 
