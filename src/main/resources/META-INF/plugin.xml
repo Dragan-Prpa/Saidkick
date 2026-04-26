@@ -45,5 +45,11 @@
                 description="Explain selected code with Saidkick">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
+        <action id="com.example.GenerateProjectDocumentationAction"
+                class="com.example.GenerateProjectDocumentationAction"
+                text="Generate Project Docs with Saidkick"
+                description="Generate whole-project documentation and save it to DOCS_OUTPUT_PATH from .env">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
     </actions>
 </idea-plugin>

@@ -34,7 +34,12 @@ DEVELOPER_NAME=Developer
 ASSISTANT_PERSONALITY=coach
 
 INACTIVITY_PERIOD=300
+DOCS_OUTPUT_PATH=docs\PROJECT_DOCUMENTATION.md
 ```
+
+Use **Tools → Generate Project Docs with Saidkick** to generate whole-project documentation and save it to `DOCS_OUTPUT_PATH`. Relative paths are resolved from the opened project's root.
+
+You can also ask Saidkick directly in chat (for example: `/generate-docs`, `/docs`, or "generate docs for the whole project"). Saidkick will trigger the same documentation generation flow and save to `DOCS_OUTPUT_PATH`.
 
 If values are missing, safe defaults are used.
 

@@ -16,6 +16,7 @@ data class AssistantConfig(
     val llmModel: String,
     val llmTimeoutSeconds: Int,
     val idleThresholdSeconds: Int,
+    val docsOutputPath: String?,
 ) {
     companion object {
         fun fromEnv(project: Project): AssistantConfig {
@@ -47,6 +48,9 @@ data class AssistantConfig(
             val idleThresholdSeconds = projectEnv["INACTIVITY_PERIOD"]?.toIntOrNull()
                 ?: projectEnv["IDLE_THRESHOLD_SECONDS"]?.toIntOrNull()
                 ?: 300
+            val docsOutputPath = projectEnv["DOCS_OUTPUT_PATH"]
+                ?.trim()
+                ?.takeIf { it.isNotEmpty() }
 
             return AssistantConfig(
                 assistantName = assistantName,
@@ -58,6 +62,7 @@ data class AssistantConfig(
                 llmModel = llmModel,
                 llmTimeoutSeconds = llmTimeoutSeconds,
                 idleThresholdSeconds = idleThresholdSeconds,
+                docsOutputPath = docsOutputPath,
             )
         }
 

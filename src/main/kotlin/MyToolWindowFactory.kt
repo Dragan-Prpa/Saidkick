@@ -11,6 +11,9 @@ import com.intellij.ui.components.JBTextArea
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.content.ContentFactory
 import java.awt.BorderLayout
+import java.nio.file.Files
+import java.nio.file.Path
+import java.util.Locale
 import java.util.concurrent.ConcurrentHashMap
 import javax.swing.JButton
 import javax.swing.JPanel
@@ -102,12 +105,84 @@ class MyToolWindowFactory : ToolWindowFactory {
             submitPrompt(prompt.trim())
         }
 
+        fun generateWholeProjectDocumentation() {
+            val configuredOutputPath = config.docsOutputPath
+            if (configuredOutputPath.isNullOrBlank()) {
+                val message = "DOCS_OUTPUT_PATH is not set in the opened project's .env."
+                pushAssistantMessage(message)
+                SaidkickNotifications.warning(project, config.assistantName, message)
+                return
+            }
+
+            val prompt = """
+                Generate Markdown documentation for the whole project from the provided context.
+                Include sections: Overview, Project Structure, Core Components, Configuration, and Usage Notes.
+                Keep it practical and concise.
+            """.trimIndent()
+
+            val generatedDocumentation = assistant.respondTo(prompt)
+            if (generatedDocumentation.startsWith("[Error]")) {
+                pushAssistantMessage(generatedDocumentation)
+                SaidkickNotifications.error(project, config.assistantName, generatedDocumentation)
+                return
+            }
+
+            val outputPath = resolveOutputPath(configuredOutputPath)
+            runCatching {
+                outputPath.parent?.let { Files.createDirectories(it) }
+                Files.writeString(outputPath, generatedDocumentation)
+            }.onSuccess {
+                val successMessage = "Generated project documentation at ${outputPath.toAbsolutePath()}"
+                pushAssistantMessage(successMessage)
+                SaidkickNotifications.info(project, config.assistantName, successMessage)
+            }.onFailure { error ->
+                val failureMessage = "Failed to write documentation: ${error.message.orEmpty()}"
+                pushAssistantMessage(failureMessage)
+                SaidkickNotifications.error(project, config.assistantName, failureMessage)
+            }
+        }
+
         private fun submitPrompt(text: String) {
             if (text.isBlank()) return
 
             pushUserMessage(text)
+            if (isDocsGenerationCommand(text)) {
+                pushAssistantMessage("Got it — generating whole-project documentation now.")
+                generateWholeProjectDocumentation()
+                return
+            }
+
             val reply = assistant.respondTo(text)
             pushAssistantMessage(reply)
+        }
+
+        private fun isDocsGenerationCommand(text: String): Boolean {
+            val normalized = text
+                .trim()
+                .lowercase(Locale.getDefault())
+
+            if (normalized.startsWith("/generate-docs") || normalized.startsWith("/docs")) {
+                return true
+            }
+
+            val hasGenerateVerb = listOf("generate", "create", "write", "make")
+                .any { normalized.contains(it) }
+            val hasDocsNoun = listOf("documentation", "docs", "readme")
+                .any { normalized.contains(it) }
+            val hasProjectScope = listOf("whole project", "entire project", "project")
+                .any { normalized.contains(it) }
+            val directDocsIntent = listOf(
+                "generate documentation",
+                "generate docs",
+                "create documentation",
+                "create docs",
+                "write documentation",
+                "write docs",
+                "make documentation",
+                "make docs",
+            ).any { normalized.contains(it) }
+
+            return directDocsIntent || (hasGenerateVerb && hasDocsNoun && hasProjectScope)
         }
 
         private fun pushUserMessage(message: String) {
@@ -133,6 +208,13 @@ class MyToolWindowFactory : ToolWindowFactory {
                 Call these variables exactly as written.
                 After saving, fully exit and re-enter the IDE so I can read the new env values.
             """.trimIndent()
+        }
+
+        private fun resolveOutputPath(configuredOutputPath: String): Path {
+            val candidate = Path.of(configuredOutputPath)
+            if (candidate.isAbsolute) return candidate
+            val basePath = project.basePath ?: return candidate
+            return Path.of(basePath).resolve(candidate).normalize()
         }
 
         private fun appendLine(line: String) {
