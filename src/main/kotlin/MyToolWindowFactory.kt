@@ -137,7 +137,7 @@ class MyToolWindowFactory : ToolWindowFactory {
 
         private fun appendLine(line: String) {
             if (conversationArea.text.isNotBlank()) {
-                conversationArea.append("\n")
+                conversationArea.append("\n\n")
             }
             conversationArea.append(line)
         }
