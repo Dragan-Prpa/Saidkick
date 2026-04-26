@@ -22,7 +22,8 @@ object assistantTts {
         if (normalizedText.isBlank()) return false
 
         val apiKey = config.elevenLabsApiKey
-        val voiceId = config.elevenLabsVoiceId
+        val selectedVoiceId = SaidkickTtsSettingsService.getInstance().getSelectedVoiceId()
+        val voiceId = selectedVoiceId ?: config.elevenLabsVoiceId
         if (apiKey.isNullOrBlank() || voiceId.isNullOrBlank()) {
             logger.warn("ElevenLabs TTS is not configured. Set ELEVENLABS_API_KEY and ELEVENLABS_VOICE_ID.")
             return false

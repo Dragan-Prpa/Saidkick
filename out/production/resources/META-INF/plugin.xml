@@ -30,12 +30,6 @@
                 id="Saidkick Notifications"
                 displayType="BALLOON"
                 isLogByDefault="true"/>
-        <applicationService serviceImplementation="com.example.SaidkickTtsSettingsService"/>
-        <applicationConfigurable
-            id="com.example.Saidkick.settings.tts"
-            displayName="Saidkick"
-            parentId="tools"
-            instance="com.example.SaidkickTtsConfigurable"/>
         <toolWindow id="MyToolWindow" factoryClass="com.example.MyToolWindowFactory"
                     icon="AllIcons.Toolwindows.ToolWindowPalette"/>
         <checkinHandlerFactory implementation="com.example.SaidkickCheckinHandlerFactory"/>

@@ -12,6 +12,7 @@ import com.intellij.ui.components.JBTextField
 import com.intellij.ui.content.ContentFactory
 import java.awt.BorderLayout
 import java.awt.Color
+import java.awt.FlowLayout
 import java.util.concurrent.ConcurrentHashMap
 import javax.swing.JButton
 import javax.swing.JPanel
@@ -47,6 +48,8 @@ class MyToolWindowFactory : ToolWindowFactory {
         private val conversationArea = JTextPane()
         private val inputField = JBTextField()
         private val sendButton = JButton(MyMessageBundle.message("toolwindow.Saidkick.send.button"))
+        private val ttsToggleButton = JButton()
+        private var ttsEnabled = true
         private val assistantTagColor = resolveColor(config.assistantColor, Color(58, 120, 246))
         private val developerTagColor = resolveColor(config.developerColor, Color(56, 142, 60))
 
@@ -54,9 +57,13 @@ class MyToolWindowFactory : ToolWindowFactory {
             conversationArea.isEditable = false
 
             val center = JBScrollPane(conversationArea)
+            val actions = JPanel(FlowLayout(FlowLayout.RIGHT, 6, 0)).apply {
+                add(ttsToggleButton)
+                add(sendButton)
+            }
             val south = JPanel(BorderLayout()).apply {
                 add(inputField, BorderLayout.CENTER)
-                add(sendButton, BorderLayout.EAST)
+                add(actions, BorderLayout.EAST)
             }
 
             add(center, BorderLayout.CENTER)
@@ -66,6 +73,11 @@ class MyToolWindowFactory : ToolWindowFactory {
         init {
             sendButton.addActionListener { sendInput() }
             inputField.addActionListener { sendInput() }
+            ttsToggleButton.text = ttsToggleLabel()
+            ttsToggleButton.addActionListener {
+                ttsEnabled = !ttsEnabled
+                ttsToggleButton.text = ttsToggleLabel()
+            }
         }
 
         fun start(parentDisposable: Disposable) {
@@ -122,9 +134,17 @@ class MyToolWindowFactory : ToolWindowFactory {
         }
 
         private fun triggerAssistantTts(message: String) {
-            if (message.isBlank()) return
+            if (!ttsEnabled || message.isBlank()) return
             ApplicationManager.getApplication().executeOnPooledThread {
                 assistantTts.speakStreaming(message, config)
+            }
+        }
+
+        private fun ttsToggleLabel(): String {
+            return if (ttsEnabled) {
+                MyMessageBundle.message("toolwindow.Saidkick.tts.on.button")
+            } else {
+                MyMessageBundle.message("toolwindow.Saidkick.tts.off.button")
             }
         }
 
